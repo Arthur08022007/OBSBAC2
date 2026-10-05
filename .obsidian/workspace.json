@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cours du Q1.md",
+                "file": "MATH0006-3 - Introduction to numerical analysis.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Cours du Q1"
+              "title": "MATH0006-3 - Introduction to numerical analysis"
             }
           }
         ]
@@ -169,7 +169,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Cours du Q1.md",
+                "file": "MATH0006-3 - Introduction to numerical analysis.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -210,6 +210,9 @@
   },
   "active": "f292de8c46910059",
   "lastOpenFiles": [
+    "INFO0952-1 - Complément d'informatique.md",
+    "MATH0006-3 - Introduction to numerical analysis.md",
+    "Cours du Q1.md",
     "README.md",
     "desktop.ini",
     "Pratiques/Cumshot.md",
@@ -225,13 +228,10 @@
     "Anatomie",
     "Actrices",
     "Pratiques",
-    "Cours du Q1.md",
     "PHYS2022-2 - Physique 3 Ondes et quanta.md",
     "MECA0003-2 - Mécanique rationnelle.md",
-    "INFO0952-1 - Complément d'informatique.md",
     "CHIM0286-1 - Éléments de thermodynamique.md",
     "MECA0001-2 - Mécanique des matériaux.md",
-    "MATH0006-3 - Introduction to numerical analysis.md",
     "Formulaires",
     "Synthèses",
     "TP",
