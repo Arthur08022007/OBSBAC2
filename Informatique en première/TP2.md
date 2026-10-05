@@ -3,7 +3,7 @@
 ```c
 int main() {
     double n;
-    printf("Entrez un entiiier : ");
+    printf("Entrez un entier : ");
     scanf("%lf", &n);
     int n_copy = n;
   
