@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "964c194311e91e61",
+        "id": "a02cb42ff02ab612",
         "type": "tabs",
         "children": [
           {
-            "id": "f292de8c46910059",
+            "id": "381c7d1d3017395b",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
-              "state": {
-                "aFile": ".obsidian/workspace.json",
-                "bFile": ".obsidian/workspace.json",
-                "aRef": ""
-              },
-              "icon": "diff",
-              "title": "Diff: workspace.json  (Working Tree)"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -150,7 +146,7 @@
                 "searchQuery": ""
               },
               "icon": "lucide-archive",
-              "title": "Toutes les propriétés"
+              "title": "All properties"
             }
           },
           {
@@ -159,6 +155,7 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Cours du Q1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -197,13 +194,16 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f292de8c46910059",
+  "active": "010e0d52f2761a49",
   "lastOpenFiles": [
+    "README.md",
+    "PHYS2022-2 - Physique 3 Ondes et quanta.md",
+    "MECA0003-2 - Mécanique rationnelle.md",
+    "MECA0001-2 - Mécanique des matériaux.md",
     "MATH0006-3 - Introduction to numerical analysis.md",
     "INFO0952-1 - Complément d'informatique.md",
-    "CHIM0286-1 - Éléments de thermodynamique.md",
     "Cours du Q1.md",
-    "README.md",
+    "CHIM0286-1 - Éléments de thermodynamique.md",
     "desktop.ini",
     "Pratiques/Cumshot.md",
     "Anatomie/Vulve.md",
@@ -218,9 +218,6 @@
     "Anatomie",
     "Actrices",
     "Pratiques",
-    "PHYS2022-2 - Physique 3 Ondes et quanta.md",
-    "MECA0003-2 - Mécanique rationnelle.md",
-    "MECA0001-2 - Mécanique des matériaux.md",
     "Formulaires",
     "Synthèses",
     "TP",
