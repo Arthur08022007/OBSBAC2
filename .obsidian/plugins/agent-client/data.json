@@ -1,0 +1,193 @@
+{
+  "presetAgents": {
+    "claude-code-acp": {
+      "id": "claude-code-acp",
+      "displayName": "Claude Code",
+      "apiKeySecretId": "",
+      "command": "claude-agent-acp",
+      "args": [],
+      "env": [],
+      "enabled": true
+    },
+    "codex-acp": {
+      "id": "codex-acp",
+      "displayName": "Codex",
+      "apiKeySecretId": "",
+      "command": "codex-acp",
+      "args": [],
+      "env": [],
+      "enabled": true
+    },
+    "gemini-cli": {
+      "id": "gemini-cli",
+      "displayName": "Gemini CLI",
+      "apiKeySecretId": "",
+      "command": "gemini",
+      "args": [
+        "--experimental-acp"
+      ],
+      "env": [],
+      "enabled": true
+    },
+    "mistral-vibe": {
+      "id": "mistral-vibe",
+      "displayName": "Mistral Vibe",
+      "apiKeySecretId": "",
+      "command": "vibe-acp",
+      "args": [],
+      "env": [],
+      "enabled": true
+    },
+    "opencode": {
+      "id": "opencode",
+      "displayName": "OpenCode",
+      "apiKeySecretId": "",
+      "command": "opencode",
+      "args": [
+        "acp"
+      ],
+      "env": [],
+      "enabled": true
+    },
+    "kiro-cli": {
+      "id": "kiro-cli",
+      "displayName": "Kiro",
+      "apiKeySecretId": "",
+      "command": "kiro-cli",
+      "args": [
+        "acp"
+      ],
+      "env": [],
+      "enabled": true
+    },
+    "hermes-agent": {
+      "id": "hermes-agent",
+      "displayName": "Hermes Agent",
+      "apiKeySecretId": "",
+      "command": "hermes",
+      "args": [
+        "acp"
+      ],
+      "env": [],
+      "enabled": true
+    },
+    "pi-acp": {
+      "id": "pi-acp",
+      "displayName": "Pi",
+      "apiKeySecretId": "",
+      "command": "pi-acp",
+      "args": [],
+      "env": [],
+      "enabled": true
+    },
+    "grok-build": {
+      "id": "grok-build",
+      "displayName": "Grok Build",
+      "apiKeySecretId": "",
+      "command": "grok",
+      "args": [
+        "agent",
+        "stdio"
+      ],
+      "env": [],
+      "enabled": true
+    }
+  },
+  "customAgents": [],
+  "defaultAgentId": "gemini-cli",
+  "autoAllowPermissions": false,
+  "autoMentionActiveNote": true,
+  "expandWikilinkContext": true,
+  "enableSystemNotifications": true,
+  "promptInjection": {
+    "enabled": true,
+    "latex": true,
+    "wikiLinks": true,
+    "tables": true
+  },
+  "debugMode": false,
+  "nodePath": "/usr/bin/node",
+  "exportSettings": {
+    "defaultFolder": "Agent Client",
+    "filenameTemplate": "agent_client_{date}_{time}",
+    "autoExportOnNewChat": false,
+    "autoExportOnCloseChat": false,
+    "openFileAfterExport": true,
+    "includeImages": true,
+    "imageLocation": "obsidian",
+    "imageCustomFolder": "Agent Client",
+    "includeAudios": true,
+    "audioLocation": "obsidian",
+    "audioCustomFolder": "Agent Client",
+    "frontmatterTag": "agent-client"
+  },
+  "windowsWslMode": true,
+  "windowsWslDistribution": "Ubuntu",
+  "sendMessageShortcut": "enter",
+  "chatViewLocation": "right-tab",
+  "displaySettings": {
+    "autoCollapseDiffs": false,
+    "diffCollapseThreshold": 10,
+    "maxNoteLength": 10000,
+    "maxSelectionLength": 10000,
+    "showEmojis": true,
+    "fontSize": null
+  },
+  "savedSessions": [
+    {
+      "sessionId": "ses_ef6e9f1e9ffe7Z5Q2NIrlQ7SiT",
+      "agentId": "opencode",
+      "cwd": "/mnt/c/Users/legra/Mon Drive/Obsidian/OBSBAC2",
+      "title": "Ceci est un coffre pour mes cours de BAC 2 Q1 e...",
+      "createdAt": "2026-10-04T22:45:40.556Z",
+      "updatedAt": "2026-10-04T22:57:48.834Z"
+    },
+    {
+      "sessionId": "ses_ef70979eaffelMO7ZLfucRwR1Y",
+      "agentId": "opencode",
+      "cwd": "/mnt/c/Users/legra/Mon Drive/Obsidian/OBSBAC2",
+      "title": "tu peut sur les parties Anatomie/ ajouter des p...",
+      "createdAt": "2026-10-04T22:18:14.483Z",
+      "updatedAt": "2026-10-04T22:39:24.527Z"
+    },
+    {
+      "sessionId": "7d729594-8792-493c-893b-a74c90e400ff",
+      "agentId": "gemini-cli",
+      "cwd": "/mnt/c/Users/legra/Mon Drive/Obsidian/OBSBAC2",
+      "title": "tu peut sur les parties Anatomie/ ajouter des p...",
+      "createdAt": "2026-10-04T22:08:21.206Z",
+      "updatedAt": "2026-10-04T22:08:21.209Z"
+    },
+    {
+      "sessionId": "a9156ecc-76dc-4d21-a8a2-d10d8fcd8910",
+      "agentId": "gemini-cli",
+      "cwd": "/mnt/c/Users/legra/Documents/Université/BAC2/OBSBAC2",
+      "title": "as-tu des suggestions de page à ajouter?",
+      "createdAt": "2026-10-04T21:40:09.680Z",
+      "updatedAt": "2026-10-04T21:41:30.026Z"
+    },
+    {
+      "sessionId": "01a1087b-277d-7f52-bd9f-6a9ab8ce3427",
+      "agentId": "grok-build",
+      "cwd": "/mnt/c/Users/legra/Documents/Université/BAC2/OBSBAC2",
+      "title": "ajoute la page Pratiques/Rubbing en raspectant ...",
+      "createdAt": "2026-10-04T20:45:58.018Z",
+      "updatedAt": "2026-10-04T21:05:11.459Z"
+    }
+  ],
+  "lastUsedModels": {},
+  "lastUsedModes": {},
+  "lastUsedConfigOptions": {},
+  "sessionHistoryFilters": {
+    "currentVaultOnly": true,
+    "hideNonLocal": false
+  },
+  "enableFloatingChat": false,
+  "floatingButtonImage": "",
+  "floatingWindowSize": {
+    "width": 400,
+    "height": 500
+  },
+  "floatingWindowPosition": null,
+  "floatingButtonPosition": null
+}
