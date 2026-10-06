@@ -18,9 +18,10 @@ Une variable a un nom et un type. Le type fixe la place en mémoire, la façon d
 `short`, `long` et `long long` changent la taille d'un `int`. La taille exacte dépend de la machine : `short` est un entier plus court, `long` un entier au moins aussi grand, `long long` un entier encore plus grand. On peut omettre le mot `int`, et combiner ces mots avec `signed` ou `unsigned`. 
 Ainsi, `long n;` et `unsigned long long n;` sont des déclarations valides. Sur un PC actuel, un `unsigned long long` va de 0 à 2⁶⁴ − 1. `long long` sert pour un entier trop grand pour un `int`.
 
+On peut utiliser le mot clé `const` au début du type de variable pour indiquer une constante càd une variable dont la valeur reste inchangée le long du programme.
+
 Affecter un `double` à un `int` abandonne la partie fractionnaire : `3.1416` devient `3`.
 
-Le sens de `/` dépend du type. `2 / 3` vaut `0` ; `2.0 / 3.0` vaut `0.6666...`.
 
 ## `++` et `--`, avant ou après
 
@@ -110,7 +111,7 @@ Les deux sont des fonctions de `stdio.h`, pas des mots du langage. Tout programm
 ```c
 printf("Entrez deux entiers : ");
 scanf("%d %d", &n, &k);
-printf("Le résultat est %d \n", result); //%d est utiliser pour afficher result et \n pe
+printf("Le résultat est %d \n", result); //%d est utiliser pour afficher l'entier result et \n permet un passage à la ligne
 ```
 
 | Spécificateur | Type |
