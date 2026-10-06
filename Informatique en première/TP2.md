@@ -2,7 +2,7 @@ Rappel à présenter avant ce TP : [[Rappel théorique]].
 
 Exercices 1 à 3 de [[Chapitre2_exo.pdf]]. Pour l'exercice 1, `x`, `y` et `z` sont des entiers valant 0 avant chaque instruction.
 
-## Exercice 1
+# Exercice 1
 
 |  | `x` | `y` | `z` |
 | --- | --- | --- | --- |
@@ -18,7 +18,7 @@ Exercices 1 à 3 de [[Chapitre2_exo.pdf]]. Pour l'exercice 1, `x`, `y` et `z` so
 - (d) `z = x > 0 || !++y ? x++ : ++x;` — `x > 0` est faux, donc `++y` est évalué. `y` passe à 1 et `!++y` vaut 0. La condition est fausse : on exécute `++x`, qui vaut 1.
 - (e) `z = (x++, x > 0) ? !x : 1 - !x;` — la virgule exécute `x++`, puis teste `x > 0`. Le test est vrai, donc `z` reçoit `!x`, soit 0.
 
-## Exercice 2
+# Exercice 2
 
 (a)
 
@@ -61,7 +61,7 @@ while (1)
     ;
 ```
 
-## Exercice 3
+# Exercice 3
 
 (a)
 
