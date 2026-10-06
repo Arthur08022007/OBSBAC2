@@ -32,7 +32,7 @@ On n'écrit pas `x = --x + x++` : la syntaxe est correcte, le résultat n'est pa
 
 ## Les conditions
 
-Une comparaison s'écrit `<`, `>`, `<=`, `>=` ou `!=`. L'égalité s'écrit avec deux signes `=` accolés, l'affectation avec un seul. En C, faux vaut `0` et vrai vaut n'importe quel entier non nul.
+Une comparaison s'écrit `<`, `>`, `<=`, `>=` ou `!=`. L'égalité s'écrit avec == accolés, l'affectation avec un seul. En C, faux vaut `0` et vrai vaut n'importe quel entier non nul.
 
 `&&` est le et, `||` le ou, `!` la négation. `&&` et `||` s'évaluent de gauche à droite et s'arrêtent dès que le résultat est connu : dans `n != 0 && m / n > 1`, la division n'a lieu que si `n` n'est pas nul.
 
