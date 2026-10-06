@@ -16,9 +16,9 @@ Une variable a un nom et un type. Le type fixe la place en mémoire, la façon d
 `signed` et `unsigned` rendent le type signé ou non signé (`int` est signé par défaut).
 
 `short`, `long` et `long long` changent la taille d'un `int`. La taille exacte dépend de la machine : `short` est un entier plus court, `long` un entier au moins aussi grand, `long long` un entier encore plus grand. On peut omettre le mot `int`, et combiner ces mots avec `signed` ou `unsigned`. 
-Ainsi, `long n;` et `unsigned long long n;` sont des déclarations valides. Sur un PC actuel, un `unsigned long long` va de 0 à 2⁶⁴ − 1. Dans l'exercice 4, `long long` sert pour un entier trop grand pour un `int`.
+Ainsi, `long n;` et `unsigned long long n;` sont des déclarations valides. Sur un PC actuel, un `unsigned long long` va de 0 à 2⁶⁴ − 1. `long long` sert pour un entier trop grand pour un `int`.
 
-Dans les programmes du TP : l'exercice 1 utilise des `double`, l'exercice 2 des `int`, l'exercice 4 un `long long`, l'exercice 5 lit un `double` puis le recopie dans un `int`. Cette copie abandonne la partie fractionnaire : `3.1416` devient `3`.
+Affecter un `double` à un `int` abandonne la partie fractionnaire : `3.1416` devient `3`.
 
 Le sens de `/` dépend du type. `2 / 3` vaut `0` ; `2.0 / 3.0` vaut `0.6666...`.
 
@@ -29,7 +29,7 @@ Le sens de `/` dépend du type. `2 / 3` vaut `0` ; `2.0 / 3.0` vaut `0.6666...`.
 - **après** la variable (`y++`, `y--`) : l'expression vaut la variable **avant** la modification ;
 - **avant** la variable (`++y`, `--y`) : l'expression vaut la variable **après** la modification.
 
-Écrit seul, `i++` et `++i` font la même chose : on n'utilise pas la valeur de l'expression. C'est le cas de `i++` dans l'exercice 5. La différence n'apparaît que si cette valeur est lue, par exemple dans une affectation ou un `printf`.
+Écrit seul, `i++` et `++i` font la même chose : on n'utilise pas la valeur de l'expression. La différence n'apparaît que si cette valeur est lue, par exemple dans une affectation ou un `printf`.
 
 On n'écrit pas `x = --x + x++` : la syntaxe est correcte, le résultat n'est pas défini.
 
@@ -48,8 +48,7 @@ else
     instr2;
 ```
 
-Si `expr` est vraie, on exécute `instr1`. Sinon, et seulement si le `else` est présent, on exécute `instr2`. Chaque branche peut être un bloc. Un `else` se rattache au `if` le plus proche du même bloc. Trois cas s'écrivent `if` / `else if` / `else` : c'est le signe de `delta` dans l'exercice 1 (`delta > 0`, `delta == 0`, sinon `delta < 0`). 
-Un `if` suivi de `return` quitte la fonction tout de suite, comme dans les exercices 1 et 4.
+Si `expr` est vraie, on exécute `instr1`. Sinon, et seulement si le `else` est présent, on exécute `instr2`. Chaque branche peut être un bloc. Un `else` se rattache au `if` le plus proche du même bloc. Trois cas s'écrivent `if` / `else if` / `else`. Un `if` suivi de `return` quitte la fonction tout de suite.
 
 `switch` choisit parmi plusieurs cas, pour un entier ou un caractère. Les valeurs des `case` sont des constantes. `break` quitte le `switch` ; sans lui, l'exécution continue au `case` suivant. `default` traite les valeurs qui ne correspondent à aucun `case`.
 
@@ -93,9 +92,9 @@ for (expr1; expr2; expr3)
 }
 ```
 
-`expr1`, `expr3` et le corps peuvent être absents. Sans `expr2`, le test est toujours vrai. `expr1` peut être une déclaration : `for (long long i = 3; i * i <= n; i += 2)`.
+`expr1`, `expr3` et le corps peuvent être absents. Sans `expr2`, le test est toujours vrai. `expr1` peut être une déclaration : `for (int i = 0; i < n; i++)`.
 
-L'exercice 2 n'initialise rien dans le `for`, parce que `n` et `k` sont déjà lus. On teste, on multiplie, **puis** on retire `k` :
+Si les variables ont déjà une valeur, l'initialisation peut rester vide. On teste, on exécute le corps, **puis** on fait la mise à jour :
 
 ```c
 for (; n - k > 0; n -= k)
@@ -104,7 +103,7 @@ for (; n - k > 0; n -= k)
 
 ## `printf` et `scanf`
 
-Les deux sont des fonctions de `stdio.h`, pas des mots du langage. Tout programme du TP qui affiche ou lit commence par `#include <stdio.h>`.
+Les deux sont des fonctions de `stdio.h`, pas des mots du langage. Tout programme qui affiche ou lit commence par `#include <stdio.h>`.
 
 `printf` affiche. `scanf` lit au clavier et écrit les valeurs **à l'adresse** des variables : on passe `&n`, pas `n`.
 
