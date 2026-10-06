@@ -32,7 +32,7 @@ On n'écrit pas `x = --x + x++` : la syntaxe est correcte, le résultat n'est pa
 
 ## Les conditions
 
-Une comparaison (`<`, `>`, `<=`, `>=`, `==`, `!=`) vaut vrai ou faux. En C, faux vaut `0`, vrai vaut n'importe quel entier non nul. `==` compare deux valeurs ; `=` affecte.
+Une comparaison s'écrit `<`, `>`, `<=`, `>=` ou `!=`. L'égalité s'écrit avec deux signes `=` accolés, l'affectation avec un seul. En C, faux vaut `0` et vrai vaut n'importe quel entier non nul.
 
 `&&` est le et, `||` le ou, `!` la négation. `&&` et `||` s'évaluent de gauche à droite et s'arrêtent dès que le résultat est connu : dans `n != 0 && m / n > 1`, la division n'a lieu que si `n` n'est pas nul.
 
@@ -45,7 +45,7 @@ else
     instr2;
 ```
 
-Si `expr` est vraie, on exécute `instr1`. Sinon, et seulement si le `else` est présent, on exécute `instr2`. Chaque branche peut être un bloc. Un `else` se rattache au `if` le plus proche du même bloc. Trois cas s'écrivent `if` / `else if` / `else` : c'est le signe de `delta` dans l'exercice 1 (`> 0`, `== 0`, sinon `< 0`). 
+Si `expr` est vraie, on exécute `instr1`. Sinon, et seulement si le `else` est présent, on exécute `instr2`. Chaque branche peut être un bloc. Un `else` se rattache au `if` le plus proche du même bloc. Trois cas s'écrivent `if` / `else if` / `else` : c'est le signe de `delta` dans l'exercice 1 (`delta > 0`, `delta == 0`, sinon `delta < 0`). 
 Un `if` suivi de `return` quitte la fonction tout de suite, comme dans les exercices 1 et 4.
 
 `switch` choisit parmi plusieurs cas, pour un entier ou un caractère. Les valeurs des `case` sont des constantes. `break` quitte le `switch` ; sans lui, l'exécution continue au `case` suivant. `default` traite les valeurs qui ne correspondent à aucun `case`.
