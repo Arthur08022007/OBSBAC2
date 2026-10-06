@@ -6,12 +6,12 @@
 
 Une variable a un nom et un type. Le type fixe la place en mémoire, la façon d'encoder la valeur, et les opérations permises. On la déclare avant de l'utiliser : `type nom;` ou `type nom = valeur;`.
 
-| Type | Contenu |
-| --- | --- |
-| `char` | caractère, ou entier sur 8 bits |
-| `int` | entier. Taille selon la machine ; souvent 32 bits sur un PC actuel, de −2³¹ à 2³¹ − 1 |
-| `float` | réel, simple précision (IEEE 754) |
-| `double` | réel, double précision (IEEE 754) |
+| Type     | Contenu                                                                               |
+| -------- | ------------------------------------------------------------------------------------- |
+| `char`   | caractère, ou entier sur 8 bits                                                       |
+| `int`    | entier. Taille selon la machine ; souvent 32 bits sur un PC actuel, de −2³¹ à 2³¹ − 1 |
+| `float`  | réel, simple précision (IEEE 754)                                                     |
+| `double` | réel, double précision (IEEE 754)                                                     |
 
 `signed` et `unsigned` rendent le type signé ou non signé (`int` est signé par défaut). `short`, `long` et `long long` changent la taille d'un `int` ; on peut omettre le mot `int`. Dans le TP, `long long` sert pour un entier trop grand pour un `int`.
 
