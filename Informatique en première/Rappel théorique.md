@@ -110,7 +110,7 @@ Les deux sont des fonctions de `stdio.h`, pas des mots du langage. Tout programm
 ```c
 printf("Entrez deux entiers : ");
 scanf("%d %d", &n, &k);
-printf("Le résultat est %d \n", result);
+printf("Le résultat est %d \n", result); //%d est utiliser pour afficher result et \n pe
 ```
 
 | Spécificateur | Type |
