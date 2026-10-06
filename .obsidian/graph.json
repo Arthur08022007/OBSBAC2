@@ -2,10 +2,10 @@
   "collapse-filter": false,
   "search": "",
   "showTags": false,
-  "showAttachments": true,
+  "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
-  "collapse-color-groups": true,
+  "collapse-color-groups": false,
   "colorGroups": [
     {
       "query": "path:\"Informatique en première\"  ",
@@ -18,7 +18,7 @@
       "query": "path:\"INFO0952-1 - Complément d'informatique\"  ",
       "color": {
         "a": 1,
-        "rgb": 14725458
+        "rgb": 5431394
       }
     }
   ],
@@ -33,5 +33,5 @@
   "linkStrength": 1,
   "linkDistance": 290,
   "scale": 0.9279250556171751,
-  "close": false
+  "close": true
 }
