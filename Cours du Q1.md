@@ -12,3 +12,7 @@
 | [[INFO0952-1 - Complément d'informatique]]          | INFO0952-1 |    5    |
 
 **Total B2 Q1 : 28 crédits**
+
+## Jobs étudiant-moniteur
+
+Je donnerai les TPs pour le cours d'[[Informatique en première]]
