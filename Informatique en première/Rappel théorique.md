@@ -63,7 +63,7 @@ while (n >= 2) {
 }
 ```
 
-`do ... while` teste **après** le tour. Le corps s'exécute au moins une fois.
+`do ... while` teste **après** le tour. Le corps s'exécute au moins une fois. En général, l'exécution se fera une fois de plus qu'avec une boucle `while` contenant le même gardien de boucle
 
 ```c
 do
@@ -71,7 +71,7 @@ do
 while (expr);
 ```
 
-`for` place à trois endroits : l'initialisation, le test, et ce qui se fait entre deux tours.
+`for` place  trois arguments : l'initialisation, le test, et ce qui se fait entre deux tours.
 
 ```c
 for (expr1; expr2; expr3)
@@ -108,7 +108,7 @@ Les deux sont des fonctions de `stdio.h`, pas des mots du langage. Tout programm
 ```c
 printf("Entrez deux entiers : ");
 scanf("%d %d", &n, &k);
-printf("Le résultat est %d\n", result);
+printf("Le résultat est %d \n", result);
 ```
 
 | Spécificateur | Type |
