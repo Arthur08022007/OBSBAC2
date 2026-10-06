@@ -99,4 +99,4 @@ printf("Le résultat est %d\n", result);
 | `%lld` | `long long` |
 | `%.2lf` | `double` affiché avec deux décimales |
 
-`\n` passe à la ligne. Le spécificateur doit être celui du type : `%lf` pour un `double` (exercices 1 et 5), `%d` pour un `int` (exercice 2), `%lld` pour un `long long` (exercice 4).
+`\n` passe à la ligne.
