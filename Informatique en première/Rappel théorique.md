@@ -45,7 +45,8 @@ else
     instr2;
 ```
 
-Si `expr` est vraie, on exécute `instr1`. Sinon, et seulement si le `else` est présent, on exécute `instr2`. Chaque branche peut être un bloc. Un `else` se rattache au `if` le plus proche du même bloc. Trois cas s'écrivent `if` / `else if` / `else` : c'est le signe de `delta` dans l'exercice 1 (`> 0`, `== 0`, sinon `< 0`). Un `if` suivi de `return` quitte la fonction tout de suite, comme dans les exercices 1 et 4.
+Si `expr` est vraie, on exécute `instr1`. Sinon, et seulement si le `else` est présent, on exécute `instr2`. Chaque branche peut être un bloc. Un `else` se rattache au `if` le plus proche du même bloc. Trois cas s'écrivent `if` / `else if` / `else` : c'est le signe de `delta` dans l'exercice 1 (`> 0`, `== 0`, sinon `< 0`). 
+Un `if` suivi de `return` quitte la fonction tout de suite, comme dans les exercices 1 et 4.
 
 `switch` choisit parmi plusieurs cas, pour un entier ou un caractère. Les valeurs des `case` sont des constantes. `break` quitte le `switch` ; sans lui, l'exécution continue au `case` suivant. `default` traite les valeurs qui ne correspondent à aucun `case`.
 
