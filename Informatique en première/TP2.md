@@ -1,3 +1,5 @@
+Rappel à présenter avant ce TP : [[Rappel théorique]].
+
 ## Ex1
 
 ```c
