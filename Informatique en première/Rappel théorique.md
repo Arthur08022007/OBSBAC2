@@ -26,15 +26,6 @@ Le sens de `/` dépend du type. `2 / 3` vaut `0` ; `2.0 / 3.0` vaut `0.6666...`.
 - **après** la variable (`y++`, `y--`) : l'expression vaut la variable **avant** la modification ;
 - **avant** la variable (`++y`, `--y`) : l'expression vaut la variable **après** la modification.
 
-Au départ, `x = y = 0` :
-
-| Instruction | `x` | `y` |
-| --- | --- | --- |
-| `x = y++` | 0 | 1 |
-| `x = ++y` | 1 | 1 |
-| `x = y--` | 0 | −1 |
-| `x = --y` | −1 | −1 |
-
 Écrit seul, `i++` et `++i` font la même chose : on n'utilise pas la valeur de l'expression. C'est le cas de `i++` dans l'exercice 5. La différence n'apparaît que si cette valeur est lue, par exemple dans une affectation ou un `printf`.
 
 On n'écrit pas `x = --x + x++` : la syntaxe est correcte, le résultat n'est pas défini.
