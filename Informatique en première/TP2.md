@@ -118,9 +118,3 @@ int main() {
     return 0;
 }
 ```
-
-```mermaid
-graph TD;
-    PC-->GitHub;
-    GitHub-->Téléphone;
-```
