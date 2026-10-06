@@ -13,7 +13,9 @@ Une variable a un nom et un type. Le type fixe la place en mémoire, la façon d
 | `float`  | réel, simple précision (IEEE 754)                                                     |
 | `double` | réel, double précision (IEEE 754)                                                     |
 
-`signed` et `unsigned` rendent le type signé ou non signé (`int` est signé par défaut). `short`, `long` et `long long` changent la taille d'un `int` ; on peut omettre le mot `int`. Dans le TP, `long long` sert pour un entier trop grand pour un `int`.
+`signed` et `unsigned` rendent le type signé ou non signé (`int` est signé par défaut).
+
+`short`, `long` et `long long` changent la taille d'un `int`. La taille exacte dépend de la machine : `short` est un entier plus court, `long` un entier au moins aussi grand, `long long` un entier encore plus grand. On peut omettre le mot `int`, et combiner ces mots avec `signed` ou `unsigned`. Ainsi, `long n;` et `unsigned long long n;` sont des déclarations valides. Sur un PC actuel, un `unsigned long long` va de 0 à 2⁶⁴ − 1. Dans l'exercice 4, `long long` sert pour un entier trop grand pour un `int`.
 
 Dans les programmes du TP : l'exercice 1 utilise des `double`, l'exercice 2 des `int`, l'exercice 4 un `long long`, l'exercice 5 lit un `double` puis le recopie dans un `int`. Cette copie abandonne la partie fractionnaire : `3.1416` devient `3`.
 
