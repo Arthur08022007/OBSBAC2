@@ -1,6 +1,6 @@
 # Rappel théorique
 
-À présenter avant [[TP2]]. Quatre points du cours (slides `info-slides-2026`, chapitre 2, et `scanf` au chapitre 6).
+À présenter avant [[TP2]]. Cinq points du cours (slides `info-slides-2026`, chapitre 2, et `scanf` au chapitre 6).
 
 ## Types de variables
 
@@ -29,6 +29,25 @@ Le sens de `/` dépend du type. `2 / 3` vaut `0` ; `2.0 / 3.0` vaut `0.6666...`.
 Écrit seul, `i++` et `++i` font la même chose : on n'utilise pas la valeur de l'expression. C'est le cas de `i++` dans l'exercice 5. La différence n'apparaît que si cette valeur est lue, par exemple dans une affectation ou un `printf`.
 
 On n'écrit pas `x = --x + x++` : la syntaxe est correcte, le résultat n'est pas défini.
+
+## Les conditions
+
+Une comparaison (`<`, `>`, `<=`, `>=`, `==`, `!=`) vaut vrai ou faux. En C, faux vaut `0`, vrai vaut n'importe quel entier non nul. `==` compare deux valeurs ; `=` affecte.
+
+`&&` est le et, `||` le ou, `!` la négation. `&&` et `||` s'évaluent de gauche à droite et s'arrêtent dès que le résultat est connu : dans `n != 0 && m / n > 1`, la division n'a lieu que si `n` n'est pas nul.
+
+`if` choisit une branche.
+
+```c
+if (expr)
+    instr1;
+else
+    instr2;
+```
+
+Si `expr` est vraie, on exécute `instr1`. Sinon, et seulement si le `else` est présent, on exécute `instr2`. Chaque branche peut être un bloc. Un `else` se rattache au `if` le plus proche du même bloc. Trois cas s'écrivent `if` / `else if` / `else` : c'est le signe de `delta` dans l'exercice 1 (`> 0`, `== 0`, sinon `< 0`). Un `if` suivi de `return` quitte la fonction tout de suite, comme dans les exercices 1 et 4.
+
+`switch` choisit parmi plusieurs cas, pour un entier ou un caractère. Les valeurs des `case` sont des constantes. `break` quitte le `switch` ; sans lui, l'exécution continue au `case` suivant. `default` traite les valeurs qui ne correspondent à aucun `case`.
 
 ## Les boucles
 
