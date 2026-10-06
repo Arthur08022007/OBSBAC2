@@ -1,6 +1,6 @@
 # Rappel théorique
 
-À présenter avant [[TP2]]. Cinq points du cours (slides `info-slides-2026`, chapitre 2, et `scanf` au chapitre 6).
+Cinq points du cours (slides [[info-slides-2026.pdf]], chapitre 2, et `scanf` au chapitre 6).
 
 ## Types de variables
 
