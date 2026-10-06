@@ -1,6 +1,5 @@
 # Rappel théorique
 
-Cinq points du cours (slides [[info-slides-2026.pdf]], chapitre 2, et `scanf` au chapitre 6).
 
 ## Types de variables
 
@@ -114,12 +113,12 @@ scanf("%d %d", &n, &k); //& donne l'adresse mémoire de la variable
 printf("Le résultat est %d \n", result); //%d est utiliser pour afficher l'entier result et \n permet un passage à la ligne
 ```
 
-| Spécificateur | Type |
-| --- | --- |
-| `%d` | `int` |
-| `%u` | entier non signé |
-| `%lf` | `double` |
-| `%lld` | `long long` |
-| `%.2lf` | `double` affiché avec deux décimales |
+| Spécificateur | Type                                 |
+| ------------- | ------------------------------------ |
+| `%d`          | `int`                                |
+| `%u`          | `unsigned int`                       |
+| `%lf`         | `double`                             |
+| `%lld`        | `long long`                          |
+| `%.2lf`       | `double` affiché avec deux décimales |
 
 `\n` passe à la ligne.
