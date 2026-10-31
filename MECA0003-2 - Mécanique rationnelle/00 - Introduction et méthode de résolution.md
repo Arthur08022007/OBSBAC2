@@ -14,15 +14,15 @@ La mécanique rationnelle décrit le mouvement de systèmes matériels à partir
 
 Un point matériel est un objet dont les dimensions sont négligeables devant les longueurs caractéristiques du mouvement. Sa rotation propre n'est pas étudiée. Le système est alors décrit par un seul vecteur position :
 
-\[
+$$
 \mathbf{s}(t)=\overrightarrow{OP}(t)
-\]
+$$
 
 Ce modèle est adapté à un projectile, une bille dont la rotation n'intervient pas, ou un satellite assimilé à un point.
 
 ### Système de points matériels
 
-Un système comporte \(N\) points \(P_i\), de masses \(m_i\) et de positions \(\mathbf{s}_i\). Les lois de Newton sont écrites pour chaque point, puis additionnées. Cette approche fait apparaître le centre d'inertie et les grandeurs résultantes.
+Un système comporte $N$ points $P_i$, de masses $m_i$ et de positions $\mathbf{s}_i$. Les lois de Newton sont écrites pour chaque point, puis additionnées. Cette approche fait apparaître le centre d'inertie et les grandeurs résultantes.
 
 ## 2. Référentiel et repère
 
@@ -30,9 +30,9 @@ Un référentiel est le système physique par rapport auquel le mouvement est ob
 
 Les théorèmes usuels sont écrits dans un **repère inertiel** (ou galiléen). Dans ce repère, un point isolé est au repos ou en mouvement rectiligne uniforme :
 
-\[
+$$
 \mathbf{F}=\mathbf{0}\quad\Longrightarrow\quad\ddot{\mathbf{s}}=\mathbf{0}.
-\]
+$$
 
 Pour les exercices proches de la surface terrestre, on assimile généralement le référentiel terrestre à un repère inertiel.
 
@@ -46,10 +46,10 @@ Préciser le point matériel ou l'ensemble de points étudié. Une même situati
 
 Le repère doit exploiter les symétries et les contraintes :
 
-- cartésien \((\mathbf e_x,\mathbf e_y,\mathbf e_z)\) pour une force constante ou un mouvement rectiligne ;
-- polaire \((\mathbf e_r,\mathbf e_\theta)\) pour un mouvement plan autour d'un point ;
-- cylindrique \((\mathbf e_r,\mathbf e_\theta,\mathbf e_z)\) pour un mouvement sur une surface de révolution ;
-- base de Frenet \((\mathbf e_t,\mathbf e_n,\mathbf e_b)\) pour une trajectoire connue.
+- cartésien $(\mathbf e_x,\mathbf e_y,\mathbf e_z)$ pour une force constante ou un mouvement rectiligne ;
+- polaire $(\mathbf e_r,\mathbf e_\theta)$ pour un mouvement plan autour d'un point ;
+- cylindrique $(\mathbf e_r,\mathbf e_\theta,\mathbf e_z)$ pour un mouvement sur une surface de révolution ;
+- base de Frenet $(\mathbf e_t,\mathbf e_n,\mathbf e_b)$ pour une trajectoire connue.
 
 Voir [[Notations et cinématique du point matériel]].
 
@@ -67,9 +67,9 @@ Voir [[Forces, liaisons et projections]].
 
 Pour un point matériel de masse constante :
 
-\[
+$$
 m\ddot{\mathbf{s}}=\sum_i\mathbf F_i.
-\]
+$$
 
 Il faut ensuite projeter dans la base choisie. Une équation vectorielle équivaut à trois équations scalaires en 3D, mais certaines projections peuvent éliminer directement une réaction de liaison.
 
@@ -78,8 +78,8 @@ Il faut ensuite projeter dans la base choisie. Une équation vectorielle équiva
 Une intégrale première est une relation contenant moins de dérivées que l'équation initiale. On l'obtient souvent en :
 
 - projetant Newton selon une direction judicieuse ;
-- multipliant scalairement par \(\dot{\mathbf{s}}\) ;
-- multipliant vectoriellement par \(\mathbf{s}\) ;
+- multipliant scalairement par $\dot{\mathbf{s}}$ ;
+- multipliant vectoriellement par $\mathbf{s}$ ;
 - identifiant une dérivée totale.
 
 Une fois obtenue, il faut lui donner une interprétation physique et déterminer sa constante avec les conditions initiales.
@@ -88,10 +88,10 @@ Une fois obtenue, il faut lui donner une interprétation physique et déterminer
 
 Les conditions initiales déterminent les constantes d'intégration :
 
-\[
+$$
 \mathbf{s}(0)=\mathbf{s}_0,\qquad
 \dot{\mathbf{s}}(0)=\mathbf v_0.
-\]
+$$
 
 Les contraintes complètent le problème :
 
@@ -105,7 +105,7 @@ Contrôler systématiquement :
 
 - les dimensions physiques ;
 - les signes et orientations ;
-- les cas limites (\(t=0\), frottement nul, gravité nulle, etc.) ;
+- les cas limites ($t=0$, frottement nul, gravité nulle, etc.) ;
 - la compatibilité avec la liaison ;
 - le caractère réaliste de la réaction calculée.
 

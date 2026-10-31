@@ -41,14 +41,14 @@ tags:
 
 Les notations suivent les synthèses fournies :
 
-- \(\mathbf{s}\) : vecteur position du point matériel par rapport à \(O\) ;
-- \(\dot{\mathbf{s}}\) et \(\ddot{\mathbf{s}}\) : vitesse et accélération ;
-- \(m\) : masse du point ou masse totale d'un système ;
-- \(\mathbf{F}\) : force, \(\mathbf{G}\) : résultante des forces extérieures ;
-- \(\mathbf{N}_O\), \(\mathbf{H}_O\), \(T_O\) : quantité de mouvement, moment cinétique et énergie cinétique résultants ;
-- \(\mathbf{Q}_O\) : moment statique résultant ;
-- \(\mathbf{c}\) : position du centre d'inertie ;
-- \(\mathbf{g}\) : accélération de la pesanteur, orientée vers le bas ;
-- \(\mathbf{e}_r,\mathbf{e}_\theta,\mathbf{e}_z\) : base polaire/cylindrique.
+- $\mathbf{s}$ : vecteur position du point matériel par rapport à $O$ ;
+- $\dot{\mathbf{s}}$ et $\ddot{\mathbf{s}}$ : vitesse et accélération ;
+- $m$ : masse du point ou masse totale d'un système ;
+- $\mathbf{F}$ : force, $\mathbf{G}$ : résultante des forces extérieures ;
+- $\mathbf{N}_O$, $\mathbf{H}_O$, $T_O$ : quantité de mouvement, moment cinétique et énergie cinétique résultants ;
+- $\mathbf{Q}_O$ : moment statique résultant ;
+- $\mathbf{c}$ : position du centre d'inertie ;
+- $\mathbf{g}$ : accélération de la pesanteur, orientée vers le bas ;
+- $\mathbf{e}_r,\mathbf{e}_\theta,\mathbf{e}_z$ : base polaire/cylindrique.
 
 Les vecteurs sont indiqués en gras dans les explications ; les formules peuvent reprendre la notation vectorielle compacte des synthèses.

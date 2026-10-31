@@ -19,15 +19,15 @@ Le but n'est pas toujours de calculer toutes les forces. Pour obtenir le mouveme
 
 Pour un mouvement sur une courbe plane :
 
-\[
+$$
 \mathbf R=R_\nu\mathbf e_\nu+R_\beta\mathbf e_\beta.
-\]
+$$
 
 La réaction normale est orthogonale à la vitesse si la liaison est idéale et sans frottement :
 
-\[
+$$
 \mathbf R\cdot\dot{\mathbf s}=0.
-\]
+$$
 
 Elle ne travaille donc pas. Cela ne signifie pas qu'elle est conservative.
 
@@ -35,34 +35,34 @@ Elle ne travaille donc pas. Cela ne signifie pas qu'elle est conservative.
 
 ### Projection sur la vitesse
 
-Multiplier Newton par \(\dot{\mathbf s}\) donne :
+Multiplier Newton par $\dot{\mathbf s}$ donne :
 
-\[
+$$
 m\dot{\mathbf s}\cdot\ddot{\mathbf s}
 =\dot{\mathbf s}\cdot\sum_i\mathbf F_i.
-\]
+$$
 
 Les forces perpendiculaires au mouvement disparaissent. On obtient souvent l'énergie cinétique ou une intégrale première.
 
 ### Produit vectoriel par la position
 
-Multiplier Newton par \(\mathbf s\) :
+Multiplier Newton par $\mathbf s$ :
 
-\[
+$$
 m\mathbf s\wedge\ddot{\mathbf s}
 =\mathbf s\wedge\sum_i\mathbf F_i.
-\]
+$$
 
-Les forces passant par \(O\) ont un moment nul en \(O\). Cette projection est le réflexe pour une force centrale ou un mouvement à symétrie de rotation.
+Les forces passant par $O$ ont un moment nul en $O$. Cette projection est le réflexe pour une force centrale ou un mouvement à symétrie de rotation.
 
 ### Projection tangentielle
 
-Pour une trajectoire connue, la projection selon \(\mathbf e_t\) élimine les réactions normales :
+Pour une trajectoire connue, la projection selon $\mathbf e_t$ élimine les réactions normales :
 
-\[
+$$
 m\mathbf a\cdot\mathbf e_t
 =\sum_i\mathbf F_i\cdot\mathbf e_t.
-\]
+$$
 
 La projection normale permet ensuite de déterminer la réaction ou de vérifier le contact.
 
