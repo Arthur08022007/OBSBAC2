@@ -9,7 +9,7 @@ La preuve doit décrire le travail déjà effectué par la boucle, pas seulement
 
 ---
 
-# 1. Écrire la spécification
+# 1. Caractériser le programme
 
 Avant de chercher l'invariant, écrire le triplet de Hoare :
 
@@ -29,7 +29,7 @@ Une postcondition doit être formulée avec des mots précis. Par exemple :
 
 ---
 
-# 2. Normaliser la boucle
+# 2. Décomposer la boucle
 
 Les corrigés réécrivent souvent un `for` sous la forme d'un `while`. Cela rend explicite l'endroit où l'invariant doit être vrai :
 
@@ -120,6 +120,9 @@ Une propriété de tableau peut nécessiter un invariant par cas. Par exemple, p
 
 ---
 
+> "Montrons que cet invariant est valide."
+
+
 # 4. Prouver l'initialisation
 
 Écrire les valeurs des variables juste avant le premier tour, puis vérifier l'invariant.
@@ -149,6 +152,9 @@ Supposer l'invariant vrai au début d'un tour et ajouter la condition de boucle 
 
 Suivre les nouvelles valeurs avec des apostrophes si nécessaire : `i'`, `j'`, `r'`.
 
+>**"Montrons que ce triplet est valide, en notant respectivement x et x′**
+>**la valeur d’une variable x avant et après l’itération concernée."**
+
 Traiter chaque branche du corps séparément. Pour une copie conditionnelle :
 
 - si la condition est vraie, l'élément courant est ajouté et `j` augmente ;
@@ -164,7 +170,7 @@ Ne pas oublier la mise à jour de l'indice. L'invariant doit être vrai après l
 
 ---
 
-# 6. Exploiter la sortie de boucle
+# 6. Fin de boucle
 
 À la fin, on dispose de l'invariant et de la négation du gardien de boucle.
 
