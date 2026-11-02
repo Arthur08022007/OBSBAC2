@@ -164,7 +164,7 @@ E-V(q)\geq0.
 $$
 
 Sur un diagramme où l'on trace $V(q)$ en fonction de $q$, il suffit donc d'ajouter une droite horizontale d'altitude $E$ :
-
+ 
 - lorsque $E>V(q)$, la région est accessible et la particule possède une énergie cinétique positive ;
 - lorsque $E=V(q)$, la vitesse s'annule : c'est un point d'arrêt ou un point de retournement ;
 - lorsque $E<V(q)$, la région est interdite classiquement, car elle demanderait une énergie cinétique négative.
