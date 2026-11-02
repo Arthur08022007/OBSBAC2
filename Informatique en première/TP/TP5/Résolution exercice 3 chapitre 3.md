@@ -19,6 +19,17 @@ On note **`S(x)`** la somme des chiffres de l'entier non signé `x`, en base 10.
 
 ---
 
+## Triplet de Hoare à vérifier
+
+Avant de décomposer le `for`, on écrit le triplet complet :
+
+**`{n est un entier non signé} for (m = n, s = 0; m; m /= 10) s += m % 10; {s = S(n) et m = 0}`**
+
+La réécriture en `while` permet ensuite de vérifier ce triplet à l'aide
+de l'invariant.
+
+---
+
 ## Réécriture avec `while`
 
 Pour rendre l'invariant explicite :
