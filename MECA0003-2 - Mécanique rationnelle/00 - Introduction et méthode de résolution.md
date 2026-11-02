@@ -53,6 +53,7 @@ Le repère doit exploiter les symétries et les contraintes :
 
 Voir [[Notations et cinématique du point matériel]].
 
+
 ### Étape 3 — Faire l'inventaire des forces
 
 Séparer :
