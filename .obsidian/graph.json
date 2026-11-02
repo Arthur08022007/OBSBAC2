@@ -20,18 +20,25 @@
         "a": 1,
         "rgb": 5431394
       }
+    },
+    {
+      "query": "path:\"MECA0003-2 - Mécanique rationnelle\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 255
+      }
     }
   ],
   "collapse-display": false,
   "showArrow": false,
   "textFadeMultiplier": 0,
   "nodeSizeMultiplier": 1,
-  "lineSizeMultiplier": 1,
-  "collapse-forces": true,
-  "centerStrength": 0.494783556524447,
-  "repelStrength": 6.80629087511679,
-  "linkStrength": 1,
-  "linkDistance": 290,
-  "scale": 1.5204648971557617,
-  "close": true
+  "lineSizeMultiplier": 1.12554751758993,
+  "collapse-forces": false,
+  "centerStrength": 0.27128133980775,
+  "repelStrength": 9.03973838073531,
+  "linkStrength": 0.865424635814092,
+  "linkDistance": 227,
+  "scale": 1.881527726448878,
+  "close": false
 }
