@@ -2,171 +2,384 @@
 
 ## Énoncé
 
-Le fragment de code suivant calcule la somme des chiffres de `n` :
+L'exercice 3 demande de démontrer la correction et de déterminer la complexité
+des programmes obtenus pour les exercices **2, 3, 5 et 6 de la section 1.5**,
+ainsi que **5 et 7 de la section 2.6** du syllabus.
 
-```c
-unsigned m, s;
-for (m = n, s = 0; m; m /= 10)
-    s += m % 10;
-```
-
-Il faut :
-
-1. démontrer à l'aide d'un invariant que le résultat calculé est correct ;
-2. prouver la terminaison à l'aide d'un variant.
-
-On note **`S(x)`** la somme des chiffres de l'entier non signé `x`, en base 10. En particulier, `S(0) = 0`.
+Les preuves ci-dessous supposent qu'aucun dépassement arithmétique ne se produit.
+Les produits vides valent `1`.
 
 ---
 
-## Triplet de Hoare à vérifier
+## 1.5, exercice 2 — Multifactorielle
 
-Avant de décomposer le `for`, on écrit le triplet complet :
+Pour `n > 0` et `k > 0`, la multifactorielle est
 
-**`{n est un entier non signé} for (m = n, s = 0; m; m /= 10) s += m % 10; {s = S(n) et m = 0}`**
+`M(n, k) = n(n-k)(n-2k)...`
 
-La réécriture en `while` permet ensuite de vérifier ce triplet à l'aide
-de l'invariant.
-
----
-
-## Réécriture avec `while`
-
-Pour rendre l'invariant explicite :
+en ne conservant que les termes strictement positifs.
 
 ```c
-unsigned m, s;
-m = n;
-s = 0;
-while (m != 0) {
-    s += m % 10;
-    m /= 10;
+int i = n;
+int resultat = 1;
+
+while (i > 0) {
+    resultat *= i;
+    i -= k;
 }
 ```
 
-À chaque tour, `m % 10` est le dernier chiffre de `m` et `m / 10` supprime ce dernier chiffre.
+### Invariant
+
+Au début de chaque tour, `i = n - qk` pour un entier `q >= 0`, et
+`resultat` est le produit des termes déjà retirés :
+
+`resultat = n(n-k)...(i+k)`.
+
+Autrement dit, `resultat` contient le produit des termes de la multifactorielle
+strictement supérieurs à `i`.
+
+### Initialisation
+
+Avant le premier tour, `i = n` et `resultat = 1`. Aucun terme n'a encore été
+retiré ; le produit vide vaut donc `1`. L'invariant est vrai.
+
+### Conservation
+
+Supposons l'invariant vrai et `i > 0`. Le corps multiplie `resultat` par le
+terme courant `i`, puis remplace `i` par `i-k`. Le nouveau produit est donc
+
+`n(n-k)...(i+k) * i`,
+
+qui correspond exactement aux termes strictement supérieurs à la nouvelle
+valeur `i-k`. L'invariant est conservé.
+
+### Sortie et correction
+
+À la sortie, `i <= 0`. Tous les termes strictement positifs de la suite
+`n, n-k, n-2k, ...` ont été multipliés. Ainsi `resultat = M(n,k)`.
+
+### Terminaison et complexité
+
+Le variant est `i` tant que `i > 0`. Après chaque tour, il diminue de `k > 0`.
+La boucle termine après `floor((n-1)/k)+1` tours.
+
+La complexité en temps est **`Theta(n/k)`**, et la complexité en espace est
+**`Theta(1)`**.
 
 ---
 
-## Invariant
+## 1.5, exercice 3 — Statistiques d'une séquence
 
-L'invariant est :
-
-**I : `S(n) = s + S(m)`.**
-
-En d'autres termes, `s` contient la somme des chiffres déjà retirés de `m`, tandis que `S(m)` contient la somme des chiffres qui restent à traiter.
-
-On peut aussi ajouter la propriété évidente :
-
-**`m >= 0` et `s >= 0`.**
-
-Cette formulation fonctionne également lorsque `n = 0`.
-
----
-
-## Initialisation
-
-Avant le premier test :
-
-- `m = n` ;
-- `s = 0`.
-
-On a donc :
-
-**`s + S(m) = 0 + S(n) = S(n)`.**
-
-L'invariant est vrai avant le premier tour. Si `n = 0`, la boucle ne s'exécute pas et le résultat `s = 0` est déjà correct.
-
----
-
-## Conservation
-
-Supposons l'invariant vrai au début d'un tour et la condition `m != 0` vraie.
-
-Effectuons la division euclidienne de `m` par 10 :
-
-**`m = 10q + r`**, avec
-
-- **`q = m / 10`** ;
-- **`r = m % 10`**, le dernier chiffre de `m`.
-
-La somme des chiffres vérifie :
-
-**`S(m) = S(q) + r`.**
-
-Le corps du programme exécute :
+On reçoit `n > 0` nombres réels `x[1]`, ..., `x[n]` séquentiellement.
 
 ```c
-s += m % 10;
-m /= 10;
+double somme, produit, moyenne, minimum, maximum, x;
+int i;
+
+scanf("%lf", &x);
+somme = produit = x;
+minimum = maximum = x;
+
+for (i = 2; i <= n; i++) {
+    scanf("%lf", &x);
+    somme += x;
+    produit *= x;
+    if (x < minimum)
+        minimum = x;
+    if (x > maximum)
+        maximum = x;
+}
+
+moyenne = somme / n;
 ```
 
-Après le corps :
+### Invariant
 
-- `s' = s + r` ;
-- `m' = q`.
+Au début de l'itération d'indice `i`, après lecture des `i-1` premiers
+éléments :
 
-En utilisant l'invariant avant le tour :
+- `somme = x[1] + ... + x[i-1]` ;
+- `produit = x[1] * ... * x[i-1]` ;
+- `minimum` est le minimum de `x[1], ..., x[i-1]` ;
+- `maximum` est le maximum de `x[1], ..., x[i-1]` ;
+- `2 <= i <= n+1`.
 
-**`s' + S(m') = (s + r) + S(q) = s + S(m) = S(n)`.**
+### Initialisation
 
-L'invariant est donc conservé.
+Après la lecture de `x[1]`, on a `somme = produit = minimum = maximum = x[1]`
+et `i = 2`. L'invariant est donc vrai.
 
----
+### Conservation
 
-## Sortie et correction
+À une itération, `x[i]` est lu. L'ajout et la multiplication donnent
+respectivement la somme et le produit des `i` premiers éléments. Les deux
+comparaisons conservent le plus petit et le plus grand de ces éléments.
+Enfin, `i++` prépare l'itération suivante. L'invariant est conservé.
 
-La boucle se termine lorsque `m == 0`.
+### Sortie et correction
 
-L'invariant devient :
+À la sortie, `i = n+1`. Les variables contiennent donc les statistiques des
+`n` éléments :
 
-**`S(n) = s + S(0) = s + 0`.**
+- `somme` est leur somme ;
+- `produit` est leur produit ;
+- `moyenne = somme/n` est leur moyenne ;
+- `minimum` et `maximum` sont leurs minimum et maximum.
 
-Donc :
+### Terminaison et complexité
 
-**`s = S(n)`.**
+Le variant est `n+1-i`. Il est strictement positif au début d'une itération et
+diminue de `1`. La boucle termine après `n-1` itérations.
 
-La variable `s` contient bien la somme des chiffres de `n`.
-
----
-
-## Terminaison
-
-On choisit comme variant :
-
-**`v = m`.**
-
-Avant chaque tour, `m` est un entier non signé et la condition impose `m > 0`, donc `v > 0`.
-
-Après la mise à jour :
-
-**`m' = m / 10`.**
-
-Pour tout entier `m > 0`, la division entière par 10 donne `m / 10 < m`. Le variant reste dans les entiers naturels et diminue strictement à chaque tour.
-
-La boucle termine donc toujours.
+La complexité en temps est **`Theta(n)`**, et la complexité en espace
+supplémentaire est **`Theta(1)`**.
 
 ---
 
-## Exemple
+## 1.5, exercice 5 — Calcul de `floor(log2(n))`
 
-Pour `n = 5072` :
+Pour `n > 0`, on peut calculer le résultat sans appeler de fonction
+logarithmique :
 
-| Début du tour | `m` | `m % 10` | `s` après ajout |
-| --- | ---: | ---: | ---: |
-| 1 | 5072 | 2 | 2 |
-| 2 | 507 | 7 | 9 |
-| 3 | 50 | 0 | 9 |
-| 4 | 5 | 5 | 14 |
+```c
+int puissance = 1;
+int resultat = 0;
 
-Après le dernier tour, `m = 0` et `s = 14`, qui est bien `5 + 0 + 7 + 2`.
+while (2 * puissance <= n) {
+    puissance *= 2;
+    resultat++;
+}
+```
+
+### Invariant
+
+Au début de chaque tour :
+
+`puissance = 2^resultat` et `puissance <= n`.
+
+### Initialisation
+
+`puissance = 1 = 2^0`, `resultat = 0`, et `1 <= n` puisque `n > 0`.
+L'invariant est vrai.
+
+### Conservation
+
+La condition donne `2 * puissance <= n`. Après le corps,
+
+`puissance' = 2 * puissance = 2^(resultat+1)`
+
+et `resultat' = resultat+1`. De plus, `puissance' <= n`. L'invariant est
+conservé.
+
+### Sortie et correction
+
+À la sortie, `2 * puissance > n`. Avec l'invariant :
+
+`puissance <= n < 2 * puissance`.
+
+Comme `puissance = 2^resultat`, on obtient
+`2^resultat <= n < 2^(resultat+1)`. Par définition,
+`resultat = floor(log2(n))`.
+
+### Terminaison et complexité
+
+Le variant `n - puissance` est un entier naturel. À chaque tour,
+`puissance` est remplacée par `2*puissance`, donc le variant diminue
+strictement. Il y a `floor(log2(n))` tours.
+
+La complexité en temps est **`Theta(log n)`**, et la complexité en espace est
+**`Theta(1)`**.
 
 ---
 
-## Résumé de la preuve
+## 1.5, exercice 6 — Exponentiation modulaire
 
-- **Invariant :** `S(n) = s + S(m)`.
-- **Initialisation :** `m = n` et `s = 0`.
-- **Conservation :** on retire le dernier chiffre `m % 10` et on remplace `m` par `m / 10`.
-- **Sortie :** `m = 0`, donc `s = S(n)`.
-- **Variant :** `m`, qui diminue strictement par division entière par 10.
+On veut calculer `a^b mod m`, avec `b >= 0` et `m > 0`, par exponentiation
+rapide.
+
+```c
+int resultat = 1 % m;
+int base = a % m;
+int exposant = b;
+
+while (exposant > 0) {
+    if (exposant % 2 == 1)
+        resultat = (resultat * base) % m;
+    base = (base * base) % m;
+    exposant /= 2;
+}
+```
+
+### Invariant
+
+Au début de chaque tour :
+
+`resultat * base^exposant ≡ a^b (mod m)`.
+
+Initialement, `resultat = 1` et `base ≡ a (mod m)`, donc l'invariant est
+vrai.
+
+### Conservation
+
+Si `exposant` est impair, on remplace d'abord `resultat` par
+`resultat * base`. Le produit restant à traiter devient alors
+`base^(exposant-1)`. Si `exposant` est pair, `resultat` ne change pas.
+
+Dans les deux cas, on remplace ensuite `base` par `base^2 mod m` et
+`exposant` par `floor(exposant/2)`. Les puissances vérifient donc
+
+- si `exposant = 2q` : `base^(2q) = (base^2)^q` ;
+- si `exposant = 2q+1` : `base^(2q+1) = base * (base^2)^q`.
+
+L'invariant est conservé modulo `m`.
+
+### Sortie et correction
+
+À la sortie, `exposant = 0`. L'invariant devient
+
+`resultat ≡ a^b (mod m)`.
+
+Le programme retourne donc bien `a^b mod m`.
+
+### Terminaison et complexité
+
+Le variant est `exposant`. La division entière par `2` le diminue
+strictement lorsqu'il est positif. Il y a `Theta(log b)` tours pour `b > 0`
+et un seul cas traité pour `b = 0`.
+
+La complexité en temps est **`Theta(log b)`**, et la complexité en espace est
+**`Theta(1)`**.
+
+---
+
+## 2.6, exercice 5 — Nombres de Fibonacci
+
+On rappelle `F1 = 1`, `F2 = 1` et `Fn = Fn-1 + Fn-2`.
+
+```c
+int fibonacci(int n) {
+    int precedent, courant, suivant, i;
+
+    if (n <= 2)
+        return 1;
+
+    precedent = 1;  /* F1 */
+    courant = 1;    /* F2 */
+    i = 2;
+
+    while (i < n) {
+        suivant = precedent + courant;
+        precedent = courant;
+        courant = suivant;
+        i++;
+    }
+
+    return courant;
+}
+```
+
+### Invariant
+
+Au début de chaque tour, `2 <= i <= n` et
+
+`precedent = F(i-1)` et `courant = F(i)`.
+
+### Initialisation
+
+Après l'initialisation, `i = 2`, `precedent = F1 = 1` et
+`courant = F2 = 1`. L'invariant est vrai.
+
+### Conservation
+
+Le corps calcule
+
+`suivant = precedent + courant = F(i-1) + F(i) = F(i+1)`.
+
+Après les affectations, `precedent = F(i)` et `courant = F(i+1)`, puis
+`i` devient `i+1`. L'invariant est conservé.
+
+### Sortie et correction
+
+La boucle s'arrête avec `i = n`. L'invariant donne `courant = F(n)`, qui est
+la valeur retournée. Les cas `n = 1` et `n = 2` sont traités directement.
+
+### Terminaison et complexité
+
+Le variant est `n-i`, qui diminue de `1` à chaque tour. La boucle effectue
+`n-2` tours.
+
+La complexité en temps est **`Theta(n)`**, contre `Theta(2^n)` pour une
+version récursive naïve. La complexité en espace supplémentaire est
+**`Theta(1)`**.
+
+---
+
+## 2.6, exercice 7 — Coefficient binomial
+
+Pour `0 <= m <= n`, on utilise la relation
+
+`C(n,i) = C(n,i-1) * (n-i+1) / i`.
+
+```c
+int coefficient_binomial(int n, int m) {
+    int coefficient = 1;
+    int i = 0;
+
+    while (i < m) {
+        i++;
+        coefficient =
+            coefficient * (n - i + 1) / i;
+    }
+
+    return coefficient;
+}
+```
+
+La division est exacte à chaque itération, puisque les coefficients
+binomiaux sont entiers. On suppose également que les calculs intermédiaires
+ne provoquent pas de dépassement.
+
+### Invariant
+
+Au début de chaque tour :
+
+`0 <= i <= m` et `coefficient = C(n,i)`.
+
+### Initialisation
+
+`i = 0` et `coefficient = 1 = C(n,0)`. L'invariant est vrai.
+
+### Conservation
+
+La mise à jour donne, par la relation entre coefficients binomiaux :
+
+`coefficient' = C(n,i) * (n-i) / (i+1) = C(n,i+1)`.
+
+Puisque `i` devient `i+1`, l'invariant est conservé.
+
+### Sortie et correction
+
+À la sortie, `i = m`. L'invariant donne
+`coefficient = C(n,m)`, qui est le résultat demandé.
+
+### Terminaison et complexité
+
+Le variant est `m-i`. Il diminue de `1` à chaque tour. La boucle effectue
+exactement `m` tours.
+
+La complexité en temps est **`Theta(m)`**, donc **`O(n)`**, et la complexité
+en espace supplémentaire est **`Theta(1)`**.
+
+---
+
+## Synthèse
+
+| Programme | Invariant central | Complexité en temps |
+| --- | --- | --- |
+| Multifactorielle | produit des termes déjà traités | `Theta(n/k)` |
+| Statistiques | statistiques du préfixe déjà lu | `Theta(n)` |
+| `floor(log2(n))` | `puissance = 2^resultat` | `Theta(log n)` |
+| Exponentiation modulaire | `resultat * base^exposant ≡ a^b (mod m)` | `Theta(log b)` |
+| Fibonacci | `precedent = F(i-1)`, `courant = F(i)` | `Theta(n)` |
+| Coefficient binomial | `coefficient = C(n,i)` | `Theta(m)` |
