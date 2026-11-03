@@ -10,8 +10,6 @@ Un invariant de boucle est une propriété qui reste vraie avant et après chaqu
 
 Il sert à expliquer rigoureusement ce que le programme a déjà établi pendant son exécution. En particulier, il permet de vérifier que le résultat construit progressivement par la boucle est correct, sans avoir à suivre toutes les valeurs possibles une par une.
 
-Pour trouver un invariant, on décrit l'état du programme **au début de chaque tour**, juste avant l'exécution du corps de la boucle.
-
 ---
 
 # Les triplets de Hoare
