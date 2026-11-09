@@ -23,6 +23,17 @@ Il faut :
 
 ---
 
+## Triplet de Hoare à vérifier
+
+Avant de décomposer le `for`, on écrit le triplet complet :
+
+**`{n > 0 et aucun dépassement arithmétique} for (i = 2, fact = 1; i <= n; i++) fact *= i; {fact = n! et i = n + 1}`**
+
+La réécriture en `while` permet ensuite de vérifier ce triplet à l'aide
+de l'invariant.
+
+---
+
 ## Réécriture avec `while`
 
 Pour rendre l'emplacement de l'invariant explicite :

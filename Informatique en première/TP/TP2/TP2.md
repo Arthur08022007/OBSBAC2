@@ -1,4 +1,4 @@
-Rappel à présenter avant ce TP : [[Rappel théorique]].
+Rappel à présenter avant ce TP : [[Informatique en première/TP/TP2/Rappel théorique]].
 
 Exercices 1 à 3 de [[Chapitre2_exo.pdf]]. Pour l'exercice 1, `x`, `y` et `z` sont des entiers valant 0 avant chaque instruction.
 
