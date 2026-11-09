@@ -1,4 +1,4 @@
-# Examen de septembre 2022 — Exercice 1
+# Exercice 5
 
 Cours d’introduction à l’informatique  
 Énoncés et solutions
