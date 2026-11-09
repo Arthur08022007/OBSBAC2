@@ -283,7 +283,7 @@ int fibonacci(int n) {
 
 Au début de chaque tour, `2 <= i <= n` et
 
-`précédenat = F(i-1)` et `courant = F(i)`.
+`precedent = F(i-1)` et `courant = F(i)`.
 
 ### Initialisation
 
