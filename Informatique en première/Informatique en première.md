@@ -6,4 +6,6 @@ Je donnerai les TPs pour ce cours d'info en BAC1
 
 [[TP5]] Invariants
 
+[[TP6]] — fonctions, procédures et invariants
+
 Les slides utilisées aux cours théorique sont dispo [[info-slides-2026.pdf|içi]]
