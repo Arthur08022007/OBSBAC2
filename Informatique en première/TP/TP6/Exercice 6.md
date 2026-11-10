@@ -1,4 +1,4 @@
-# Examen de janvier 2023 — Exercice 1
+# Exercice 6
 
 Cours d’introduction à l’informatique  
 Énoncés et solutions
